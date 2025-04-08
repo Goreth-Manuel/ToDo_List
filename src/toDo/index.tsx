@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import * as S from './style'
 
 
 const ToDo = () => {
     const [task, setTask] = useState('');
-    console.log(task)
+    const [todoList, setTodoList] = useState<string[]>([]);
+
+    console.log(todoList)
+    
+    function handleAddTodoList(event: FormEvent){
+        event.preventDefault()
+        setTodoList((oldTodoList) => [...oldTodoList, task])
+    }
 
     return(
         <S.Container> 
-        <form>
+        <form onSubmit={handleAddTodoList}>
             <input 
             type="text" 
             placeholder="Insira o nome da tarefa"
@@ -16,6 +23,11 @@ const ToDo = () => {
             />
             <button type="submit">Adicionar</button>
         </form>
+        <ul>
+            {todoList.map(todo =>
+                <li key={todo}>{todo}</li>
+             )}
+        </ul>
         </S.Container>
     
     )
