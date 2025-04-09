@@ -3,15 +3,17 @@ import * as S from './style'
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-
 const ToDo = () => {
     const [task, setTask] = useState('');
     const [todoList, setTodoList] = useState<string[]>([]);
-
     
     function handleAddTodoList(event: FormEvent){
-        event.preventDefault()
+        event.preventDefault();
+
+        if(task === '') return;
         setTodoList((oldTodoList) => [...oldTodoList, task]);
+
+        setTask('');
     }
 
     return(
@@ -19,7 +21,8 @@ const ToDo = () => {
         <form onSubmit={handleAddTodoList}>
             <Input 
             type="text" 
-            placeholder="Insira o nome da tarefa"
+            value={task}
+            placeholder="Digite o nome da tarefa"
             onChange={(event) => setTask(event.target.value) }
             />
             <Button type="submit">Adicionar</Button>
