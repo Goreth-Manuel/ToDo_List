@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import * as S from './style'
 import Input from '../components/Input';
+import Button from '../components/Button';
 
 
 const ToDo = () => {
@@ -21,7 +22,7 @@ const ToDo = () => {
             placeholder="Insira o nome da tarefa"
             onChange={(event) => setTask(event.target.value) }
             />
-            <button type="submit">Adicionar</button>
+            <Button type="submit">Adicionar</Button>
         </form>
         <ul>
             {todoList.map(todo =>

@@ -1,14 +1,12 @@
-import { ChangeEvent } from "react";
+import {  InputHTMLAttributes } from "react";
 
-interface InputProps {
-    type: string;
-    placeholder: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
-const Input = ({type, placeholder, onChange }: InputProps) => {
+type InputProps = InputHTMLAttributes<HTMLInputElement>
+    
+
+const Input = ({...rest}: InputProps) => {
     return(
         <>
-        <input type={type} placeholder={placeholder} onChange={onChange} />
+        <input {...rest} />
         </>
     )
 }
