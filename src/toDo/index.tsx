@@ -1,22 +1,22 @@
 import { FormEvent, useState } from 'react';
 import * as S from './style'
+import Input from '../components/Input';
 
 
 const ToDo = () => {
     const [task, setTask] = useState('');
     const [todoList, setTodoList] = useState<string[]>([]);
 
-    console.log(todoList)
     
     function handleAddTodoList(event: FormEvent){
         event.preventDefault()
-        setTodoList((oldTodoList) => [...oldTodoList, task])
+        setTodoList((oldTodoList) => [...oldTodoList, task]);
     }
 
     return(
         <S.Container> 
         <form onSubmit={handleAddTodoList}>
-            <input 
+            <Input 
             type="text" 
             placeholder="Insira o nome da tarefa"
             onChange={(event) => setTask(event.target.value) }
