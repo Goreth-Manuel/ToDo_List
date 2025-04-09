@@ -18,6 +18,12 @@ const ToDo = () => {
 
     return(
         <S.Container> 
+            <ul>
+                {todoList.map(todo =>
+                    <li key={todo}>{todo}</li>
+                )}
+            </ul>
+            
         <form onSubmit={handleAddTodoList}>
             <Input 
             type="text" 
@@ -27,11 +33,7 @@ const ToDo = () => {
             />
             <Button type="submit">Adicionar</Button>
         </form>
-        <ul>
-            {todoList.map(todo =>
-                <li key={todo}>{todo}</li>
-             )}
-        </ul>
+       
         </S.Container>
     
     )

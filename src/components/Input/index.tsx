@@ -1,4 +1,5 @@
 import {  InputHTMLAttributes } from "react";
+import * as S from "./style"
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>
     
@@ -6,7 +7,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement>
 const Input = ({...rest}: InputProps) => {
     return(
         <>
-        <input {...rest} />
+        <S.Input {...rest} />
         </>
     )
 }
