@@ -16,14 +16,22 @@ export const Container = styled.div`
 
     ul li {
         padding: 5px 0;
-        display: flex;
-        flex-direction: column;
         max-width: 500px;
         margin: 0 auto;
-        justify-content: center;
+        display: flex;
+        justify-content: space-between;
         font-size: 20px;
-       
     }
     
+`
 
+export const Icons = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    > :first-child {
+        margin-right: 16px;
+    }
+    `
+export const Icon = styled.div`
 `
