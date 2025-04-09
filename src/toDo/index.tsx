@@ -21,6 +21,10 @@ const ToDo = () => {
         setTodoList(todoList.filter((todo) => todo !==todoId))
     }
 
+    function handleEditTodoList (editedTodo: any, originalTodo: string) {
+        setTodoList(todoList.map((todo) => todo === originalTodo ? editedTodo : todo ))
+    }
+
     return(
         <S.Container> 
             <ul>
@@ -29,7 +33,12 @@ const ToDo = () => {
                         {todo}
                         <S.Icons> 
                             <S.Icon> 
-                            <FaEdit size={22} color="#007bff" />
+                            <FaEdit 
+                                size={22} 
+                                color="#007bff"
+                                onClick={(editedTodo) => handleEditTodoList(editedTodo, todo)}
+                            />
+                                
                             </S.Icon>
 
                             <S.Icon> 
