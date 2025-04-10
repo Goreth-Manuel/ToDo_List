@@ -1,4 +1,5 @@
 // import useToDoModel from "../model/useToDoModel";
+// import useToDoModel from "../model/useToDoModel";
 import ToDoView from "../view/ToDoView";
 
 const ToDoViewModel = () => {
@@ -7,8 +8,7 @@ const ToDoViewModel = () => {
         // <ToDoView 
         // {...ToDoModel}
         // />
-        <ToDoView 
-        />
+        <ToDoView/>
        
     )
 }
