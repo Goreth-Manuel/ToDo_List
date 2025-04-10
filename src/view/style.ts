@@ -25,6 +25,23 @@ export const Container = styled.div`
     
 `
 
+export const Input = styled.input`
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border: 2px solid #8515aa;
+    background-color: transparent;  
+    width: 20em;
+    padding: 15px 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+    &:focus {
+        border: 2px solid #8515aa;
+        color: #ffffff;
+    }
+`
+
 export const Icons = styled.div`
     display: flex;
     justify-content: space-between;
