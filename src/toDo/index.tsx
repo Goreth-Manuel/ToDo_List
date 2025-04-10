@@ -59,7 +59,7 @@ const ToDo = () => {
                     <li key={todo}>
                         {editingIndex === index ? (
                             <>
-                                <input
+                                <S.Input
                                     type="text"
                                     value={editedTask}
                                     onChange={(e) => setEditedTask(e.target.value)}
